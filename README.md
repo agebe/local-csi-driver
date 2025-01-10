@@ -12,7 +12,7 @@ Unlike the Kubernetes local volumes this driver creates the storage directory au
             type: Directory
 ```
 
-The persistent volumes are all created in this directory (flat, no hierarchy) whit the name derived from the PV, see [test-pod.yaml])test-pod.yaml).
+The persistent volumes are all created in this directory (flat, no hierarchy) with the name derived from the PV, see [test-pod.yaml](test-pod.yaml).
 
 To develop and test this locally with minikube use the following commands.
 ```
