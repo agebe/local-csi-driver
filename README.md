@@ -24,8 +24,14 @@ docker build -t local-csi-driver:local .
 
 to load the image into minikube:
 minikube image load local-csi-driver:local
+(fix the csi-driver.yaml to point to image local-csi-driver:local)
 kubectl apply -f csi-driver.yaml
 kubectl apply -f test-pod.yaml
+```
+
+Follow logs of the CSI driver with:
+```
+kubectl -n kube-system logs -f $(kubectl -n kube-system get pod -l app=local-csi-driver -o name) -c local-csi-driver
 ```
 
 Related commands
