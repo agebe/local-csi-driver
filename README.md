@@ -1,10 +1,10 @@
 # local-csi-driver
 
-Kubernetes CSI driver example using local storage similar to (local volumes)[https://kubernetes.io/docs/concepts/storage/volumes/#local]
+Kubernetes CSI driver example using local storage similar to [local volumes](https://kubernetes.io/docs/concepts/storage/volumes/#local)
 
-The CSI-Driver does no (Dynamic Volume Provisioning)[https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/] so you still have to create the PV yourself as shown in (test-pod.yaml)[test-pod.yaml]
+This CSI-Driver does no [Dynamic Volume Provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) so you still have to create the PV yourself as shown in [test-pod.yaml](test-pod.yaml)
 
-Unlike the Kubernetes local volumes this driver creates the storage directory automatically if missing but won't remove it again. The main storage path on the node (host) is configured in the (csi-driver.yaml)[csi-driver.yaml] towards the end of the file.
+Unlike the Kubernetes local volumes this driver creates the storage directory automatically if missing but won't remove it again. The main storage path on the node (host) is configured in the [csi-driver.yaml](csi-driver.yaml) towards the end of the file.
 ```yaml
         - name: storage-dir
           hostPath:
@@ -12,7 +12,7 @@ Unlike the Kubernetes local volumes this driver creates the storage directory au
             type: Directory
 ```
 
-The persistent volumes are all created in this directory (flat, no hierarchy) whit the name derived from the PV, see (test-pod.yaml)[test-pod.yaml].
+The persistent volumes are all created in this directory (flat, no hierarchy) whit the name derived from the PV, see [test-pod.yaml])test-pod.yaml).
 
 To develop and test this locally with minikube use the following commands.
 ```
