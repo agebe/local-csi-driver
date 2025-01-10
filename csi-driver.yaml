@@ -102,7 +102,8 @@ spec:
           - name: registration-dir
             mountPath: /registration
       - name: local-csi-driver
-        image: local-csi-driver:local
+#        image: local-csi-driver:local
+        image: agebe/local-csi-driver:latest
         env:
           - name: CSI_ENDPOINT
             value: unix:///csi/csi.sock
